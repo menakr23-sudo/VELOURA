@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloura Coffee | Boutique Officielle</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #3d2b1f; /* Marron Veloura */
+            --accent: #c4a484;  /* Or/Beige */
+            --bg: #fdfaf7;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg); color: var(--primary); scroll-behavior: smooth; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: var(--white);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: bold; color: var(--primary); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 14px; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(61, 43, 31, 0.7), rgba(61, 43, 31, 0.7)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 20px;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
+
+        /* --- SECTION PRIX & PRODUITS --- */
+        .shop-container { padding: 80px 8%; text-align: center; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
+        
+        .product-card {
+            background: var(--white); padding: 25px; border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: 0.4s;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .product-card:hover { transform: translateY(-10px); }
+        .product-card img { width: 100%; border-radius: 15px; margin-bottom: 20px; }
+        .product-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .product-card .price { font-size: 1.6rem; color: var(--accent); font-weight: 700; margin-bottom: 15px; }
+        .product-card .desc { font-size: 0.9rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+
+        /* --- BOUTON WHATSAPP --- */
+        .order-btn {
+            background: #25D366; color: white; text-decoration: none;
+            padding: 12px 25px; border-radius: 30px; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .order-btn:hover { background: #128C7E; transform: scale(1.05); }
+
+        /* --- LIVRAISON --- */
+        .delivery-info {
+            background: var(--primary); color: white; padding: 60px 8%;
+            margin-top: 50px; border-radius: 30px 30px 0 0; text-align: center;
+        }
+        .delivery-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
+        .delivery-item { flex: 1; min-width: 200px; }
+        .delivery-item h4 { color: var(--accent); margin-bottom: 10px; font-size: 1.2rem; }
+
+        footer { background: #2b1e15; color: #a49184; padding: 30px; text-align: center; font-size: 0.8rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; } /* On simplifie pour mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VELOURA</div>
+        <ul>
+            <li><a href="#produits">Boutique</a></li>
+            <li><a href="#livraison">Livraison</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Veloura Coffee</h1>
+        <p>L'intensité d'un café premium, livré directement chez vous au Maroc.</p>
+        <a href="#produits" style="background:var(--accent); color:white; padding:15px 40px; text-decoration:none; border-radius:50px; font-weight:bold;">COMMANDER MAINTENANT</a>
+    </header>
+
+    <section id="produits" class="shop-container">
+        <h2 class="section-title">NOS PRODUITS & PRIX</h2>
+        
+        <div class="grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=500&q=80" alt="Veloura 250g">
+                <h3>FORMAT DÉCOUVERTE</h3>
+                <p class="price">43 DH <span style="font-size: 0.9rem; color:#999;">/ 250g</span></p>
+                <p class="desc">L'équilibre parfait pour s'initier aux arômes subtils de Veloura. Idéal pour un premier test.</p>
+                <a href="https://wa.me/212600000000?text=Bonjour, je souhaite commander le format 250g (43 DH)" class="order-btn">
+                    Commander sur WhatsApp
+                </a>
+            </div>
+
+            <div class="product-card" style="border: 2px solid var(--accent);">
+                <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=500&q=80" alt="Veloura 500g">
+                <h3>FORMAT ÉQUILIBRE</h3>
+                <p class="price">85 DH <span style="font-size: 0.9rem; color:#999;">/ 500g</span></p>
+                <p class="desc">Le format préféré de nos clients. Un excellent rapport qualité-prix pour votre café quotidien.</p>
+                <a href="https://wa.me/212600000000?text=Bonjour, je souhaite commander le format 500g (85 DH)" class="order-btn">
+                    Commander sur WhatsApp
+                </a>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=500&q=80" alt="Veloura 1kg">
+                <h3>FORMAT ÉCONOMIQUE</h3>
+                <p class="price">170 DH <span style="font-size: 0.9rem; color:#999;">/ 1kg</span></p>
+                <p class="desc">Destiné aux grands consommateurs et aux familles. Économisez en commandant le grand format.</p>
+                <a href="https://wa.me/212600000000?text=Bonjour, je souhaite commander le format 1kg (170 DH)" class="order-btn">
+                    Commander sur WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="livraison" class="delivery-info">
+        <h2 style="font-family:'Playfair Display'; font-size: 2rem; margin-bottom: 20px;">LIVRAISON & SERVICES</h2>
+        <div class="delivery-grid">
+            <div class="delivery-item">
+                <h4>📍 Partout au Maroc</h4>
+                <p>Livraison rapide à domicile ou en point relais dans toutes les villes.</p>
+            </div>
+            <div class="delivery-item">
+                <h4>🚚 Délais</h4>
+                <p>24h à 48h selon votre localisation.</p>
+            </div>
+            <div class="delivery-item">
+                <h4>💳 Paiement</h4>
+                <p>Paiement à la livraison (Cash on Delivery) en toute sécurité.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>VELOURA COFFEE - Créé en 2026. Qualité supérieure garantie.</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Fait avec passion pour les amateurs de café.</p>
+    </footer>
+
+</body>
+</html>
+
